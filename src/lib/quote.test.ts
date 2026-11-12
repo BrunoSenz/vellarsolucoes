@@ -18,7 +18,7 @@ describe("orçamento via WhatsApp", () => {
   });
 
   it("inclui todas as respostas do formulário na mensagem", () => {
-    const text = decodeURIComponent(buildQuoteWhatsappLink(sample).split("?text=")[1]);
+    const text = decodeURIComponent(buildQuoteWhatsappLink(sample).split("?text=")[1] ?? "");
     for (const v of ["CFTV", "Comercial", "Instalação", "Guarujá", "Ana", "(13) 99999-0000"]) {
       expect(text).toContain(v);
     }

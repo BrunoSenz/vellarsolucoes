@@ -36,7 +36,7 @@ export function Navbar() {
     const io = new IntersectionObserver(
       (entries) => {
         const vis = entries.filter((e) => e.isIntersecting);
-        if (vis.length) setActive(vis[0].target.id);
+        if (vis[0]) setActive(vis[0].target.id);
         else if (window.scrollY < 300) setActive(null);
       },
       { rootMargin: "-45% 0px -50% 0px" },
