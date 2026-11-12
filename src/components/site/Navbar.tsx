@@ -51,9 +51,9 @@ export function Navbar() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3">
       <div
         className={cn(
-          "pointer-events-auto w-[min(94vw,880px)] text-ink-foreground transition-all duration-500 ease-out",
-          scrolled ? "mt-3 scale-[0.985] island-glass-strong" : "mt-5 island-glass",
-          open ? "rounded-[28px]" : "rounded-[28px] md:rounded-full",
+          "pointer-events-auto w-[min(94vw,960px)] whitespace-nowrap text-ink-foreground transition-all duration-500 ease-out",
+          scrolled || open ? "mt-3 scale-[0.985] island-glass-strong" : "mt-5 island-glass",
+          open ? "rounded-[28px]" : "rounded-[28px] lg:rounded-full",
         )}
       >
         <nav className="flex items-center justify-between gap-1 px-2 py-2" aria-label="Principal">
@@ -66,9 +66,9 @@ export function Navbar() {
             <Logo subtle />
           </Link>
 
-          <div className="mx-1 hidden h-5 w-px bg-ink-border md:block" />
+          <div className="mx-1 hidden h-5 w-px bg-ink-border lg:block" />
 
-          <ul className="hidden items-center md:flex">
+          <ul className="hidden items-center lg:flex">
             {NAV_ITEMS.map((item) => (
               <li key={item.id}>
                 <Link
@@ -116,7 +116,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-ink-foreground/80 transition-colors hover:bg-ink-foreground/10 md:hidden"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-ink-foreground/80 transition-colors hover:bg-ink-foreground/10 lg:hidden"
               aria-label={open ? "Fechar menu" : "Abrir menu"}
               aria-expanded={open}
             >
@@ -126,7 +126,7 @@ export function Navbar() {
         </nav>
 
         {open && (
-          <div className="animate-island-open px-3 pb-4 md:hidden">
+          <div className="animate-island-open px-3 pb-4 lg:hidden">
             <div className="mb-2 h-px bg-ink-border" />
             <ul className="grid gap-0.5">
               {NAV_ITEMS.map((item) => (

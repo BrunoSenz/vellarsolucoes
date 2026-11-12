@@ -100,8 +100,8 @@
   --ink-border: oklch(1 0 0 / 10%);
   --ink-card: oklch(0.19 0.005 165);
 
-  --island: oklch(0.142 0.004 165 / 62%);
-  --island-strong: oklch(0.142 0.004 165 / 82%);
+  --island: oklch(0.142 0.004 165 / 72%);
+  --island-strong: oklch(0.142 0.004 165 / 90%);
   --island-border: oklch(1 0 0 / 12%);
 
   --shadow-soft: 0 1px 2px oklch(0.142 0.004 165 / 4%), 0 8px 24px -12px oklch(0.142 0.004 165 / 10%);
@@ -151,7 +151,7 @@
 
 /* Typographic scale */
 @utility display-xl {
-  font-size: clamp(2.6rem, 5.6vw, 4.75rem);
+  font-size: clamp(2.5rem, 4.9vw, 4.25rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
   font-weight: 700;

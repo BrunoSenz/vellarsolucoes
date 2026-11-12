@@ -39,7 +39,7 @@ export function Faq() {
   return (
     <section id="faq" className="section-y">
       <div className="container-site grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        <Reveal>
+        <Reveal className="lg:sticky lg:top-32 lg:self-start">
           <p className="eyebrow mb-4">Dúvidas</p>
           <h2 className="display-lg">Perguntas frequentes.</h2>
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
