@@ -57,7 +57,11 @@ export function Navbar() {
       <div
         className={cn(
           "pointer-events-auto w-[min(94vw,960px)] whitespace-nowrap text-ink-foreground transition-all duration-500 ease-out",
-          scrolled || open ? "mt-3 scale-[0.985] island-glass-strong" : "mt-5 island-glass",
+          open
+            ? "mt-3 island-glass-solid"
+            : scrolled
+              ? "mt-3 scale-[0.985] island-glass-strong"
+              : "mt-5 island-glass",
           open ? "rounded-[28px]" : "rounded-[28px] lg:rounded-full",
         )}
       >

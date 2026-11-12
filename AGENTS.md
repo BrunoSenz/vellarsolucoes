@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Home is one long page with anchor sections (`#solucoes`, `#sobre`, `#como-funciona`, `#faq`, `#contato`, `#orcamento`) because the brand reference site navigates that way; articles live at `/conteudos` and `/conteudos/$slug`.
+- Contact data and WhatsApp link builders live only in `src/lib/site.ts`; every WhatsApp button uses `whatsappLink()` so the number stays in one place.
+- The quote wizard never posts to a server; it builds a message in `src/lib/quote.ts` and opens WhatsApp (covered by `src/lib/quote.test.ts`).
+- Articles are static data in `src/content/articles.ts`; add an entry to publish a new one.
+- Navbar is a floating "Dynamic Island" capsule rendered in `__root.tsx`; keep it compact, never a full-width bar.
