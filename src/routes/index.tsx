@@ -1,23 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero, HERO_IMAGE } from "@/components/home/Hero";
+import { Services } from "@/components/home/Services";
+import { QuoteWizard } from "@/components/home/QuoteWizard";
+import { About } from "@/components/home/About";
+import { Process } from "@/components/home/Process";
+import { Differentials } from "@/components/home/Differentials";
+import { Showcase } from "@/components/home/Showcase";
+import { Stats } from "@/components/home/Stats";
+import { Faq } from "@/components/home/Faq";
+import { Articles } from "@/components/home/Articles";
+import { FinalCta } from "@/components/home/FinalCta";
+import { Contact } from "@/components/home/Contact";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "VELLAR Soluções — Tecnologia, segurança e infraestrutura";
+const DESC =
+  "Há mais de 8 anos em segurança eletrônica, CFTV, energia solar, elétrica, automação e telecomunicação para residências, comércios e empresas. Guarujá - SP.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: HERO_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: HERO_IMAGE },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <Hero />
+      <Services />
+      <QuoteWizard />
+      <About />
+      <Process />
+      <Differentials />
+      <Showcase />
+      <Stats />
+      <Faq />
+      <Articles />
+      <Contact />
+      <FinalCta />
+    </main>
   );
 }
