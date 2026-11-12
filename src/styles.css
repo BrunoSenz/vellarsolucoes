@@ -151,7 +151,7 @@
 
 /* Typographic scale */
 @utility display-xl {
-  font-size: clamp(2.5rem, 4.9vw, 4.25rem);
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
   font-weight: 700;
@@ -209,7 +209,7 @@
   box-shadow: var(--shadow-island);
 }
 @utility glass-light {
-  background-color: oklch(1 0 0 / 72%);
+  background-color: oklch(1 0 0 / 88%);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
   border: 1px solid oklch(1 0 0 / 60%);

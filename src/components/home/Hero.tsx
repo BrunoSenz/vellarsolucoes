@@ -18,7 +18,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40">
       <div className="bg-grid-faint pointer-events-none absolute inset-0 opacity-60" aria-hidden />
       <div className="container-site relative">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.12fr_1fr] lg:gap-14">
           <div>
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-soft">
@@ -74,7 +74,7 @@ export function Hero() {
                 </div>
               </div>
             </div>
-            <div className="glass-light absolute -left-4 top-8 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-card md:flex lg:-left-10">
+            <div className="glass-light absolute left-5 top-5 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-card md:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-soft text-primary-deep">
                 <BadgeCheck className="h-5 w-5" />
               </span>
@@ -83,7 +83,7 @@ export function Hero() {
                 <p className="mt-1 text-[11px] text-muted-foreground">de mercado</p>
               </div>
             </div>
-            <div className="glass-light absolute -right-3 top-1/2 hidden items-center gap-2.5 rounded-full px-4 py-2.5 shadow-card md:flex">
+            <div className="glass-light absolute right-5 top-5 hidden items-center gap-2.5 rounded-full px-4 py-2.5 shadow-card md:flex">
               <Wrench className="h-4 w-4 text-primary-deep" />
               <span className="text-xs font-medium">Instalação e manutenção</span>
             </div>

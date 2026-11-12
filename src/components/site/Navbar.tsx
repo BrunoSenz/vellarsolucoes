@@ -32,17 +32,22 @@ export function Navbar() {
       return;
     }
     const ids = NAV_ITEMS.map((i) => i.id);
-    const els = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-    const io = new IntersectionObserver(
-      (entries) => {
-        const vis = entries.filter((e) => e.isIntersecting);
-        if (vis[0]) setActive(vis[0].target.id);
-        else if (window.scrollY < 300) setActive(null);
-      },
-      { rootMargin: "-45% 0px -50% 0px" },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const update = () => {
+      const line = window.innerHeight * 0.4;
+      let current: string | null = null;
+      for (const id of ids) {
+        const r = document.getElementById(id)?.getBoundingClientRect();
+        if (r && r.top <= line && r.bottom > line) current = id;
+      }
+      setActive(current);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, [onHome, pathname]);
 
   useEffect(() => setOpen(false), [pathname]);
